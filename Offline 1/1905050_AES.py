@@ -189,26 +189,6 @@ def generateRoundKeys(roundKey, roundCount):
 
 
 
-# def generateRoundKeys(keyStateMatrix):
-#     # generate round keys
-#     roundKeys = np.zeros((11, 4, 4), dtype=np.uint8)
-#     roundKeys[0] = keyStateMatrix
-#
-#     for i in range(1, 11):
-#         prevRoundKey = roundKeys[i-1]
-#
-#         lastCol = prevRoundKey[:, 3]
-#
-#         for j in range(4):
-#             # shift the last column
-#             if j == 0:
-#                 roundKeys[i][:, j] = g(lastCol, i)^prevRoundKey[:, j]
-#             else:
-#                 roundKeys[i][:, j] = roundKeys[i][:, j-1]^prevRoundKey[:, j]
-#
-#
-#     return roundKeys
-
 def applyCBC(plaintext, IV):
     # XOR the plaintext with the IV
     plaintext = plaintext^IV
